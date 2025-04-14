@@ -1,0 +1,40 @@
+main {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    height: 100%;
+}
+
+main>section {
+    width: 100%;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.card-container {
+    padding: 0 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.card {
+    width: 275px;
+    margin: 10px;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    border: #eeee;
+    box-shadow: var(#eee);
+}
+
+
+.card-content {
+    padding: 10px;
+    width: 100%;
+}

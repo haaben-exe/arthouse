@@ -1,0 +1,23 @@
+{% extends 'main/base.html' %} {% load static %} {% block head %}
+
+<link rel="stylesheet" href="{% static 'css/main/post.css' %}" />
+
+
+{% endblock %} {% block content %}
+
+<section class="post-container">
+    <div class="post-details">
+        <h1>{{ post.title }}</h1>
+        <p>{{ post.description }}</p>
+        <p>{{ post.category }}</p>
+        <p>{{ post.tags }}</p>
+
+        
+    </div>
+    <div class="post-actions">
+        <a href="{% url 'post_update' post.id %}" class="btn warn">Edit</a>
+        <a href="{% url 'post_delete' post.id %}" class="btn danger">Delete</a>
+    </div>
+</section>
+
+{% endblock %}

@@ -1,0 +1,32 @@
+{% extends 'main/base.html' %} 
+{% load static %} 
+{% block head %}
+<link rel="stylesheet" href="{% static 'css/main/base.css' %}" />
+{% endblock %} 
+{% block content %}
+
+<div class="page-content">
+    <h1>Welcome Home!</h1>
+
+    <p>
+        All your preferred content in one place
+    </p>
+</div>
+
+
+<section class="card-container">
+    {% for post in posts %}
+    <div class="card">
+        <a href="{% url 'post_detail' post.id %}">
+            <div class="card-content">
+                <h2 class="card-title">{{ post.title }}</h2>
+                <p>{{ post.description }}</p>
+                <p>{{ post.category }}</p>
+                <p>{{ post.tags }}</p>
+            </div>
+        </a>
+    </div>
+    {% endfor %}
+</section>
+
+{% endblock %}
