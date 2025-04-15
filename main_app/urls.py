@@ -15,7 +15,7 @@ urlpatterns = [
 
     path(
         'home/', 
-        views.HomePage, 
+        views.home, 
         name='home'
         ),
 
@@ -57,7 +57,7 @@ urlpatterns = [
 
     path(
         'login/', 
-        LoginView.as_view(template_name='form/login.html'),
+        views.login,
         name='login'
         ),
 

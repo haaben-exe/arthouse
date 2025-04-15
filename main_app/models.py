@@ -8,7 +8,7 @@ from django.contrib.auth.models import User
 class Post(models.Model):
 
     author = models.ForeignKey(
-        'auth.User', 
+        User, 
         on_delete=models.CASCADE,
         null=True
         )

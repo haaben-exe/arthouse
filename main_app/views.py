@@ -20,7 +20,7 @@ from django.http import HttpResponse
 class LandingPage(LoginView):
     template_name = 'main/landing.html'
 
-def HomePage(request):
+def home(request):
     posts = Post.objects.all()
     return render(request, 'main/home.html', {'posts': posts})
 
@@ -67,19 +67,19 @@ class PostDelete(DeleteView):
 def ProfilePage(request):
     return render(request, 'detail/profile.html')
 
-def Login(request):
-    if request.method == 'POST':
-        form = AuthenticationForm(request, data=request.POST)
-        if form.is_valid():
-            user = form.get_user()
-            login(request, user)
-            return redirect('home')
-        else:
-            return render(request, 'form/login.html', {'form': form, 'error_message': 'Invalid login credentials. Please try again.'})
-    else:
-        form = AuthenticationForm()
+# def Login(request):
+#     if request.method == 'POST':
+#         form = AuthenticationForm(request, data=request.POST)
+#         if form.is_valid():
+#             user = form.get_user()
+#             login(request, user)
+#             return redirect('home')
+#         else:
+#             return render(request, 'form/login.html', {'form': form, 'error_message': 'Invalid login credentials. Please try again.'})
+#     else:
+#         form = AuthenticationForm()
 
-    return render(request, 'form/login.html', {'form': form})
+#     return render(request, 'form/login.html', {'form': form})
 
 def Signup(request):
     error_message = ''
