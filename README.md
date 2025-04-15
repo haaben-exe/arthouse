@@ -1,5 +1,5 @@
 # *Arthouse*
-![app logo](main_app/static/css/house.png)
+![app logo](arthouse/main_app/static/css/house.png)
 
 A user-generated website designed to cater to independent and international artists alike!
 
