@@ -6,6 +6,8 @@ from django.contrib.auth.forms import AuthenticationForm
 from django.contrib.auth.views import LoginView
 from django.contrib.auth import login, authenticate
 from django.contrib.auth.forms import UserCreationForm
+from django.contrib.auth.decorators import login_required
+
 
 from .forms import CommentForm
 
@@ -27,9 +29,13 @@ class CreatePost(CreateView):
     template_name = 'form/postform.html'
     fields = ['title', 'image', 'category', 'description', 'tags']
 
+    def form_valid(self, form):
+        form.instance.user = self.request.user
+        return super().form_valid(form)
+
 def PostPage(request, post_id):
     post = Post.objects.get(id=post_id)
-    comments = post.comments.all().order_by('-date')  # Show newest first
+    comments = post.comments.all().order_by('-date') 
 
     if request.method == 'POST':
         form = CommentForm(request.POST)
