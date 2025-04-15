@@ -1,7 +1,24 @@
-{% extends 'main/base.html' %} {% block content %}
+{% extends 'main/base.html' %} 
 
-<h1>Welcome to Arthouse!</h1>
+{% block content %}
+    <h1>Welcome to Arthouse!</h1>
 
-<p>A free app designed for independent and international artist to earn more by sharing their content to the world</p>
+        <p>A free app designed for independent and international artist to earn more by sharing their content to the world</p>
 
+        <div class="page-header">
+            <h1>Sign Up</h1>
+          </div>
+          {% if error_message %}
+            <p class="red-text">{{ error_message }}</p>
+          {% endif %}
+          <form action="" method="post" class="form-container" autocomplete="off">
+            {% csrf_token %}
+            <table>
+              {{ form.as_table }}
+            </table>
+            <button type="submit" class="btn submit">Submit</button>
+
+            <a href="/login">Login here</a>
+          </form>
+        
 {% endblock %}

@@ -8,8 +8,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="{% static 'css/main/base.css' %}" />
     <link rel="icon" type="image/png" href="{% static 'icons/navbar/house.png' %}" />
+    {% block head %} 
     <title>Arthouse</title>
-    {% block head %} {% endblock %}
+    {% endblock %}
 </head>
 
 <body>
@@ -21,16 +22,22 @@
         </div>
         <nav>
             <ul>
+                {% if user.is_authenticated %}
                 <li><a href="/search"><img src="{% static 'icons/navbar/search.svg' %}" alt="Search Button" /></a></li>
                 <li><a href="/post/create"><img src="{% static 'icons/navbar/add.svg' %}" alt="Create Post Button" /></a></li>
                 <li><a href="/profile"><img src="{% static 'icons/navbar/user.svg' %}" alt="User Profile Button" /></a>
                 </li>
+                {% else %}
+                <li><a href="/search"><img src="{% static 'icons/navbar/search.svg' %}" alt="Search Button" /></a></li>
+                {% endif %}
             </ul>
         </nav>
     </header>
     <hr />
     <main>
-        {% block content %} {% endblock %}
+        {% block content %} 
+        
+        {% endblock %}
     </main>
 </body>
 

@@ -1,23 +1,27 @@
-{% extends 'main/base.html' %} {% load static %} {% block head %}
+{% extends 'main/base.html' %} 
+{% load static %} 
 
-<link rel="stylesheet" href="{% static 'css/main/post.css' %}" />
+{% block head %}
+<link rel="stylesheet" href="{% static 'css/detail/post.css' %}" />
+{% endblock %} 
 
 
-{% endblock %} {% block content %}
-
+{% block content %}
 <section class="post-container">
     <div class="post-details">
         <h1>{{ post.title }}</h1>
-        <p>{{ post.description }}</p>
-        <p>{{ post.category }}</p>
-        <p>{{ post.tags }}</p>
+        {% if post.image %}
+            <img src="{{ post.image.url }}" alt="Post image">
+        {% endif %}
+            <p>{{ post.description }}</p>
+            <p>Category: {{ post.category }}</p>
+            <p>Tags: {{ post.tags }}</p>
 
-        
+
     </div>
     <div class="post-actions">
         <a href="{% url 'post_update' post.id %}" class="btn warn">Edit</a>
         <a href="{% url 'post_delete' post.id %}" class="btn danger">Delete</a>
     </div>
 </section>
-
 {% endblock %}

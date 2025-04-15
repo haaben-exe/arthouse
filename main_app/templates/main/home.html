@@ -1,10 +1,12 @@
-{% extends 'main/base.html' %} 
-{% load static %} 
-{% block head %}
-<link rel="stylesheet" href="{% static 'css/main/base.css' %}" />
-{% endblock %} 
-{% block content %}
+{% extends 'main/base.html' %}
+{% load static %}
 
+{% block head %}
+    <link rel="stylesheet" href="{% static 'css/main/home.css' %}" />
+{% endblock %}
+
+
+{% block content %}
 <div class="page-content">
     <h1>Welcome Home!</h1>
 
@@ -16,16 +18,23 @@
 
 <section class="card-container">
     {% for post in posts %}
-    <div class="card">
-        <a href="{% url 'post_detail' post.id %}">
+    <a href="{% url 'post_detail' post.id %}">
+        <div class="card">
             <div class="card-content">
                 <h2 class="card-title">{{ post.title }}</h2>
-                <p>{{ post.description }}</p>
-                <p>{{ post.category }}</p>
-                <p>{{ post.tags }}</p>
+                    <p>Posted by: {{ post.author }}</p>
+
+                {% if post.image %}
+                    <img src="{{ post.image.url }}" alt="Post image">
+                {% else %}
+                    <p>{{ post.description }}</p>
+                    <p>Category: {{ post.category }}</p>
+                    <p>Tags: {{ post.tags }}</p>
+                {% endif %}
             </div>
-        </a>
-    </div>
+        </div>
+    </a>
+
     {% endfor %}
 </section>
 
