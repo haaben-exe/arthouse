@@ -1,6 +1,6 @@
 {% extends 'main/base.html' %} {% block content %}
 
-<h1>Hi, Profile!</h1>
+<h1>Hi, {{ user }}!</h1>
 
 <form id="logout-form" method="post" action="{% url 'logout' %}">
     {% csrf_token %}

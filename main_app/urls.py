@@ -4,6 +4,8 @@ from . import views
 from django.conf import settings
 from django.conf.urls.static import static
 
+from django.contrib.auth.views import LoginView
+
 
 urlpatterns = [
     path('', 
@@ -55,7 +57,13 @@ urlpatterns = [
 
     path(
         'login/', 
-        views.Login, 
+        LoginView.as_view(template_name='form/login.html'),
+        name='login'
+        ),
+
+    path(
+        'signup/', 
+        views.Signup, 
         name='signup'
         ),
 

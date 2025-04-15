@@ -28,7 +28,12 @@
                 <li><a href="/profile"><img src="{% static 'icons/navbar/user.svg' %}" alt="User Profile Button" /></a>
                 </li>
                 {% else %}
-                <li><a href="/search"><img src="{% static 'icons/navbar/search.svg' %}" alt="Search Button" /></a></li>
+                <li>
+                    <button class="btn"><a href="/signup">Sign Up</a></button>
+                </li>
+                <li>
+                    <button class="btn"><a href="/login">Login</a></button>
+                </li>
                 {% endif %}
             </ul>
         </nav>

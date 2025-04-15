@@ -16,8 +16,12 @@ main>section {
 }
 
 .card {
-    width: 275px;
-    margin: 16px;
+    padding: 35px;
+    width: 77%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     background: rgba(255, 255, 255, 0.05);
     backdrop-filter: blur(10px);
     border-radius: 12px;
@@ -33,11 +37,12 @@ main>section {
 .card-content>img {
     width: 100%;
     height: 200px;
-    object-fit: contain;
+    object-fit:cover;
   }
 
 .card-container a {
     text-decoration: none;
+    padding-bottom: 16px;
 }
 
 .card-title {

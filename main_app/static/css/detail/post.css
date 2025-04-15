@@ -52,3 +52,51 @@
     height: 200px;
     object-fit: contain;
   }
+
+  .comment-section {
+    margin-top: 40px;
+    width: 90%;
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    border-color: 1px solid rgb(212, 212, 212);
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+  }
+  
+  .comment-list {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+  
+  .comment {
+    background: rgba(255, 255, 255, 0.03);
+    border-radius: 8px;
+    padding: 10px 15px;
+    margin-bottom: 10px;
+    color: #fff;
+  }
+  
+  .comment-form textarea {
+    width: 100%;
+    padding: 10px;
+    font-family: inherit;
+    font-size: 1rem;
+    border-radius: 6px;
+    resize: vertical;
+  }
+  
+  .comment-form .btn {
+    margin-top: 10px;
+    padding-right: 16px;
+    color: #eee
+  }
+  

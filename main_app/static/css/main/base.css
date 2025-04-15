@@ -37,15 +37,15 @@ header * {
 
 .btn {
   font-size: var(--font-l);
-  padding: 8px 16px;
+  padding: 12px 12px;
   border-radius: 6px;
-  border-width: 2px;
+  border-width: 0;
   border-style: solid;
+  background-color: transparent;
   text-decoration: none;
   font-weight: 600;
   cursor: pointer;
   font-family: inherit;
-  margin-right: 10px;
 }
 
 ul {
@@ -59,6 +59,11 @@ ul {
 
 nav li a {
   filter: brightness(0) invert(1);
+  text-decoration: none;
+}
+
+li {
+  line-height: 0px;
 }
 
 nav li a:hover {
